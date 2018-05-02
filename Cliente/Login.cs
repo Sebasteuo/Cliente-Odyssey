@@ -33,5 +33,12 @@ namespace Cliente
         {
             this.Close();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Usuario usuario = new Usuario();
+            usuario.Show();
+            this.Close();
+        }
     }
 }
