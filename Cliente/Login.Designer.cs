@@ -17,10 +17,10 @@
             {
                 components.Dispose();
             }
-            base.Dispose(disposing);//kbjbbnkj
+            base.Dispose(disposing);//kbjbbnkjjhabdkjbiknfio
         }
 
-        #region Código generado por el Diseñador de Windows Forms
+        #region Código generado por el Diseñador de Windows Forms/
 
         /// <summary>
         /// Método necesario para admitir el Diseñador. No se puede modificar
@@ -31,7 +31,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();//Prueba
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();//kjnafibuwefn
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();

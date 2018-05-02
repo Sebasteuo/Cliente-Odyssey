@@ -1,7 +1,7 @@
 ﻿<Properties StartupConfiguration="{0985B30F-8CBD-423C-880B-89B0AC84A349}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="Cliente/Login.Designer.cs">
     <Files>
-      <File FileName="Cliente/Login.Designer.cs" Line="20" Column="47" />
+      <File FileName="Cliente/Login.Designer.cs" Line="23" Column="66" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
