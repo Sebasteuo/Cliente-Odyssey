@@ -17,10 +17,10 @@
             {
                 components.Dispose();
             }
-            base.Dispose(disposing);//kbjbbnkjjhabdkjbiknfio
+            base.Dispose(disposing);
         }
 
-        #region Código generado por el Diseñador de Windows Forms/
+        #region Código generado por el Diseñador de Windows Forms
 
         /// <summary>
         /// Método necesario para admitir el Diseñador. No se puede modificar
@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();//Prueba
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();//kjnafibuwefn
+            this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -70,6 +70,7 @@
             this.button2.TabIndex = 3;
             this.button2.Text = "Crear Usuario";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label1
             // 
