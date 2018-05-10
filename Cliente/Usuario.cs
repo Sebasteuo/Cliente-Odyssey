@@ -26,6 +26,23 @@ namespace Cliente
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string[] genero = new string[boxGenero.CheckedItems.Count];
+            if (boxGenero.CheckedItems.Count > 0)
+            {
+                int i = 0;
+                foreach (string s in boxGenero.CheckedItems)
+                {
+                    genero[i] = s;
+                    i++;
+                }
+            }
+            string nick = boxNick.Text;
+            string name = boxName.Text;
+            string edad = boxEdad.Text;
+            string contra = boxContra.Text;
+            string amigos = boxAmigos.Text;
+            // crear(nick,name,edad,genero,contra,amigos)
+
             Login login = new Login();
             login.Show();
             this.Close();

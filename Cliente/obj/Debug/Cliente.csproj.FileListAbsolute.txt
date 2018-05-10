@@ -9,3 +9,4 @@ C:\Users\mende_000\Desktop\Cliente\Cliente\Cliente\obj\Debug\Cliente.csproj.Gene
 C:\Users\mende_000\Desktop\Cliente\Cliente\Cliente\obj\Debug\Cliente.csproj.CoreCompileInputs.cache
 C:\Users\mende_000\Desktop\Cliente\Cliente\Cliente\obj\Debug\Cliente.exe
 C:\Users\mende_000\Desktop\Cliente\Cliente\Cliente\obj\Debug\Cliente.pdb
+C:\Users\mende_000\Desktop\Cliente\Cliente\Cliente\obj\Debug\Cliente.csprojResolveAssemblyReference.cache
