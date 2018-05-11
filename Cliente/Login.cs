@@ -19,9 +19,20 @@ namespace Cliente
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Odyssey odyssey = new Odyssey();
-            odyssey.Show();
-            this.Close();
+            string name = boxName.Text;
+            string contra = boxContra.Text;
+
+            Boolean validacion = true;
+            if (!validacion)
+            {
+                MessageBox.Show("El nombre de usuario o la contraseña es incorrrecta");
+            }
+            else
+            {
+                Odyssey odyssey = new Odyssey();
+                odyssey.Show();
+                this.Close();
+            }
         }
 
         private void Login_Load(object sender, EventArgs e)
