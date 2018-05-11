@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Cliente
@@ -45,6 +38,11 @@ namespace Cliente
             {
                 MessageBox.Show("No se ha escrito un nombre");
             }
+        }
+
+        private void Amigo_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

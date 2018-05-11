@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Cliente
@@ -108,7 +102,6 @@ namespace Cliente
         {
             try
             {
-                label5.Text = ((int)axWindowsMediaPlayer1.currentMedia.duration).ToString();
                 trackBar1.Maximum = (int)axWindowsMediaPlayer1.currentMedia.duration;
                 trackBar1.Value = (int)axWindowsMediaPlayer1.Ctlcontrols.currentPosition;
             }

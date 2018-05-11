@@ -91,6 +91,7 @@
             this.Name = "Amigo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Amigo";
+            this.Load += new System.EventHandler(this.Amigo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
