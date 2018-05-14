@@ -33,7 +33,15 @@ namespace Cliente
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //Sockets.Conectar(8,emisor,remitente,textBox1.Text,"","","");
+            string boolean=Sockets.Conectar(7,emisor,remitente,textBox1.Text,"","","");
+            if (boolean.Equals("true"))
+            {
+                MessageBox.Show("Se ha enviado tu mensaje");
+            }
+            else
+            {
+                MessageBox.Show("No tienes esta cancion es tu biblioteca");
+            }
         }
     }
 }

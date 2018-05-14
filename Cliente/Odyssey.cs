@@ -119,7 +119,6 @@ namespace Cliente
                 yield return buffer;
             }
         }**/
-
         private void trackBar2_Scroll(object sender, EventArgs e)
         {
             axWindowsMediaPlayer1.settings.volume = trackBar2.Value;
@@ -142,7 +141,6 @@ namespace Cliente
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            axWindowsMediaPlayer1.URL = (string) listBox1.SelectedItem;
             axWindowsMediaPlayer1.URL = (string) Biblioteca.SelectedItem;
         }
 
@@ -168,19 +166,12 @@ namespace Cliente
 
         private void button2_Click(object sender, EventArgs e)
         {
-
             lista.Hide();
             mensajes.Hide();
         }
 
         private void timer1_Tick_1(object sender, EventArgs e)
         {
-            try
-            {
-                trackBar1.Maximum = (int)axWindowsMediaPlayer1.currentMedia.duration;
-                trackBar1.Value = (int)axWindowsMediaPlayer1.Ctlcontrols.currentPosition;
-            }
-            catch { }
             //try
             //{
             //    trackBar1.Maximum = (int)axWindowsMediaPlayer1.currentMedia.duration;
@@ -193,7 +184,7 @@ namespace Cliente
         {
             lista.Items.Clear();
             mensajes.Hide();
-            string nombre = "hack/david/sebas/";// Sockets.Conectar(9, name, "", "", "", "", "");
+            string nombre = Sockets.Conectar(9, name, "", "", "", "", "");
             if (nombre.Length != 0)
             {
                 string[] gen = new string[10];

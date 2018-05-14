@@ -54,18 +54,12 @@
             this.trackBar3 = new System.Windows.Forms.TrackBar();
             this.panel2 = new System.Windows.Forms.Panel();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
-<<<<<<< HEAD
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-=======
             this.Biblioteca = new System.Windows.Forms.ListBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lista = new System.Windows.Forms.ListBox();
             this.mensajes = new System.Windows.Forms.ListBox();
             this.general = new System.Windows.Forms.ListBox();
->>>>>>> ce26871e79a0e822fa38d7c850e0ab12fd67706b
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
@@ -373,25 +367,6 @@
             this.panel2.TabIndex = 18;
             // 
             // trackBar1
-<<<<<<< HEAD
-            // 
-            this.trackBar1.Location = new System.Drawing.Point(3, 3);
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(714, 45);
-            this.trackBar1.TabIndex = 21;
-            this.trackBar1.TickFrequency = 0;
-            // 
-            // listBox1
-            // 
-            this.listBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(280, 101);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(720, 403);
-            this.listBox1.TabIndex = 19;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
-=======
             // 
             this.trackBar1.Location = new System.Drawing.Point(3, 3);
             this.trackBar1.Name = "trackBar1";
@@ -409,7 +384,6 @@
             this.Biblioteca.Size = new System.Drawing.Size(720, 533);
             this.Biblioteca.TabIndex = 19;
             this.Biblioteca.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
->>>>>>> ce26871e79a0e822fa38d7c850e0ab12fd67706b
             // 
             // openFileDialog1
             // 
@@ -423,8 +397,6 @@
             this.timer1.Interval = 1;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
             // 
-<<<<<<< HEAD
-=======
             // lista
             // 
             this.lista.BackColor = System.Drawing.SystemColors.Control;
@@ -461,7 +433,6 @@
             this.general.Visible = false;
             this.general.SelectedIndexChanged += new System.EventHandler(this.general_SelectedIndexChanged);
             // 
->>>>>>> ce26871e79a0e822fa38d7c850e0ab12fd67706b
             // Odyssey
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -536,11 +507,8 @@
         private System.Windows.Forms.ListBox Biblioteca;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Timer timer1;
-<<<<<<< HEAD
-=======
         private System.Windows.Forms.ListBox lista;
         private System.Windows.Forms.ListBox mensajes;
         private System.Windows.Forms.ListBox general;
->>>>>>> ce26871e79a0e822fa38d7c850e0ab12fd67706b
     }
 }

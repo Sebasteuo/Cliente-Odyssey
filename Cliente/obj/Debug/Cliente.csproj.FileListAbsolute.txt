@@ -1,27 +1,3 @@
-<<<<<<< HEAD
-C:/Users/mende_000/Desktop/Cliente/Cliente/Cliente/bin/Debug/Cliente.exe.config
-C:/Users/mende_000/Desktop/Cliente/Cliente/Cliente/bin/Debug/Cliente.exe
-C:/Users/mende_000/Desktop/Cliente/Cliente/Cliente/bin/Debug/Cliente.pdb
-C:/Users/mende_000/Desktop/Cliente/Cliente/Cliente/obj/Debug/Cliente.Login.resources
-C:/Users/mende_000/Desktop/Cliente/Cliente/Cliente/obj/Debug/Cliente.Odyssey.resources
-C:/Users/mende_000/Desktop/Cliente/Cliente/Cliente/obj/Debug/Cliente.Properties.Resources.resources
-C:/Users/mende_000/Desktop/Cliente/Cliente/Cliente/obj/Debug/Cliente.Usuario.resources
-C:/Users/mende_000/Desktop/Cliente/Cliente/Cliente/obj/Debug/Cliente.csproj.GenerateResource.cache
-C:/Users/mende_000/Desktop/Cliente/Cliente/Cliente/obj/Debug/Cliente.csproj.CoreCompileInputs.cache
-C:/Users/mende_000/Desktop/Cliente/Cliente/Cliente/obj/Debug/Cliente.exe
-C:/Users/mende_000/Desktop/Cliente/Cliente/Cliente/obj/Debug/Cliente.pdb
-C:/Users/mende_000/Desktop/Cliente/Cliente/Cliente/obj/Debug/Cliente.csprojResolveAssemblyReference.cache
-C:/Users/mende_000/Desktop/Cliente/Cliente/Cliente/obj/Debug/Cliente.Amigo.resources
-C:/Users/mende_000/Desktop/Cliente/Cliente/Cliente/obj/Debug/Cliente.Buscar.resources
-C:/Users/mende_000/Desktop/Cliente/Cliente/Cliente/bin/Debug/Interop.WMPLib.dll
-C:/Users/mende_000/Desktop/Cliente/Cliente/Cliente/bin/Debug/AxInterop.WMPLib.dll
-C:/Users/mende_000/Desktop/Cliente/Cliente/Cliente/obj/Debug/Interop.WMPLib.dll
-C:/Users/mende_000/Desktop/Cliente/Cliente/Cliente/obj/Debug/AxInterop.WMPLib.dll
-C:/Users/mende_000/Desktop/Cliente/Cliente/Cliente/obj/Debug/Cliente.csproj.ResolveComReference.cache
-/Users/sebastianalba/Desktop/Cliente/Cliente/obj/Debug/Cliente.csprojResolveAssemblyReference.cache
-/Users/sebastianalba/Desktop/Cliente/Cliente/obj/Debug/Cliente.exe
-/Users/sebastianalba/Desktop/Cliente/Cliente/obj/Debug/Cliente.pdb
-=======
 C:\Users\mende_000\Desktop\Cliente\Cliente\Cliente\bin\Debug\Cliente.exe.config
 C:\Users\mende_000\Desktop\Cliente\Cliente\Cliente\bin\Debug\Cliente.exe
 C:\Users\mende_000\Desktop\Cliente\Cliente\Cliente\bin\Debug\Cliente.pdb
@@ -41,9 +17,5 @@ C:\Users\mende_000\Desktop\Cliente\Cliente\Cliente\obj\Debug\Cliente.csproj.Gene
 C:\Users\mende_000\Desktop\Cliente\Cliente\Cliente\obj\Debug\Cliente.csproj.CoreCompileInputs.cache
 C:\Users\mende_000\Desktop\Cliente\Cliente\Cliente\obj\Debug\Cliente.exe
 C:\Users\mende_000\Desktop\Cliente\Cliente\Cliente\obj\Debug\Cliente.pdb
-<<<<<<< HEAD
->>>>>>> db17c65e38735c11e6cf368cfeac7ca9e8b502bd
-=======
 C:\Users\mende_000\Desktop\Cliente\Cliente\Cliente\obj\Debug\Cliente.Mensaje.resources
 C:\Users\mende_000\Desktop\Cliente\Cliente\Cliente\obj\Debug\Cliente.Recomendacion.resources
->>>>>>> ce26871e79a0e822fa38d7c850e0ab12fd67706b
