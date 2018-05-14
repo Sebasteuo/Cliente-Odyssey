@@ -41,4 +41,9 @@ C:\Users\mende_000\Desktop\Cliente\Cliente\Cliente\obj\Debug\Cliente.csproj.Gene
 C:\Users\mende_000\Desktop\Cliente\Cliente\Cliente\obj\Debug\Cliente.csproj.CoreCompileInputs.cache
 C:\Users\mende_000\Desktop\Cliente\Cliente\Cliente\obj\Debug\Cliente.exe
 C:\Users\mende_000\Desktop\Cliente\Cliente\Cliente\obj\Debug\Cliente.pdb
+<<<<<<< HEAD
 >>>>>>> db17c65e38735c11e6cf368cfeac7ca9e8b502bd
+=======
+C:\Users\mende_000\Desktop\Cliente\Cliente\Cliente\obj\Debug\Cliente.Mensaje.resources
+C:\Users\mende_000\Desktop\Cliente\Cliente\Cliente\obj\Debug\Cliente.Recomendacion.resources
+>>>>>>> ce26871e79a0e822fa38d7c850e0ab12fd67706b
