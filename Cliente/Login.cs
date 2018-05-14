@@ -5,24 +5,26 @@ namespace Cliente
 {
     public partial class Login : Form
     {
+        
         public Login()
         {
             InitializeComponent();
         }
+        string name = "";
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string name = boxName.Text;
+            name = boxName.Text;
             string contra = boxContra.Text;
 
-            Boolean validacion = true;
-            if (!validacion)
+            string validacion = "true";//Sockets.Conectar(2,name,contra,"","","","") ;
+            if (validacion== "false")
             {
                 MessageBox.Show("El nombre de usuario o la contraseña es incorrrecta");
             }
             else
             {
-                Odyssey odyssey = new Odyssey();
+                Odyssey odyssey = new Odyssey(name);
                 odyssey.Show();
                 this.Close();
             }

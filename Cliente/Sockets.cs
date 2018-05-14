@@ -7,14 +7,30 @@ namespace Cliente
 {
     class Sockets
     {
-        public static string Conectar(int work, string nick, string name, string edad, string genero, string contra, string amigos)
+        public static string Conectar(int work, string String1, string String2, string String3, string String4, string String5, string String6)
         {
             TcpClient client = new TcpClient("localhost", 113);
+            if (work == 0)
+            {
+                string data = work.ToString();
+                byte[] buf;
+                buf = Encoding.UTF8.GetBytes(data + "\n");
+                NetworkStream stream = client.GetStream();
+                stream.Write(buf, 0, data.Length + 1);
+                buf = new byte[100];
+                stream.Read(buf, 0, 100);
+                string xml = Encoding.UTF8.GetString(buf);
+                xml = xml.Substring(0, xml.IndexOf(char.ConvertFromUtf32(0)));
+                XmlDocument doc = new XmlDocument();
+                doc.LoadXml(xml);
+                string nombre = doc.DocumentElement.Name;
+                return nombre; 
+            }
 
             if (work == 1)
             {
 
-                string data = work.ToString() + "/" + nick + "/" + name + "/" + edad + "/" + genero + "/" + contra + "/" + amigos;
+                string data = work.ToString() + "/" + String1 + "/" + String2 + "/" + String3 + "/" + String4 + "/" + String5 + "/" + String6;
                 byte[] buf;
                 buf = Encoding.UTF8.GetBytes(data + "\n");
                 NetworkStream stream = client.GetStream();
@@ -35,6 +51,55 @@ namespace Cliente
                 {
                     return "false";
                 }
+            }
+            if (work == 2)
+            {
+                string data = work.ToString() + "/" +  String1 + "/" + String2;
+                byte[] buf;
+                buf = Encoding.UTF8.GetBytes(data + "\n");
+                NetworkStream stream = client.GetStream();
+                stream.Write(buf, 0, data.Length + 1);
+                buf = new byte[100];
+                stream.Read(buf, 0, 100);
+                string xml = Encoding.UTF8.GetString(buf);
+                xml = xml.Substring(0, xml.IndexOf(char.ConvertFromUtf32(0)));
+                XmlDocument doc = new XmlDocument();
+                doc.LoadXml(xml);
+                return doc.DocumentElement.Name;
+            }
+            if(work == 7)
+            {
+                string data = work.ToString() + "/" + String1 + "/" + String2 + "/" + String3;
+                byte[] buf;
+                buf = Encoding.UTF8.GetBytes(data + "\n");
+                NetworkStream stream = client.GetStream();
+                stream.Write(buf, 0, data.Length + 1);
+                buf = new byte[100];
+                stream.Read(buf, 0, 100);
+                string xml = Encoding.UTF8.GetString(buf);
+                xml = xml.Substring(0, xml.IndexOf(char.ConvertFromUtf32(0)));
+                XmlDocument doc = new XmlDocument();
+                doc.LoadXml(xml);
+                return doc.DocumentElement.Name;
+            }
+            if (work == 8)
+            {
+
+            }
+            if (work == 9)
+            {
+                string data = work.ToString() + "/" + String1 ;
+                byte[] buf;
+                buf = Encoding.UTF8.GetBytes(data + "\n");
+                NetworkStream stream = client.GetStream();
+                stream.Write(buf, 0, data.Length + 1);
+                buf = new byte[100];
+                stream.Read(buf, 0, 100);
+                string xml = Encoding.UTF8.GetString(buf);
+                xml = xml.Substring(0, xml.IndexOf(char.ConvertFromUtf32(0)));
+                XmlDocument doc = new XmlDocument();
+                doc.LoadXml(xml);
+                return doc.DocumentElement.Name;
             }
             return "false";
         }

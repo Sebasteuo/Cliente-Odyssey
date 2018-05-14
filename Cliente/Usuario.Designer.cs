@@ -42,8 +42,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.boxContra = new System.Windows.Forms.TextBox();
-            this.boxAmigos = new System.Windows.Forms.TextBox();
             this.boxGenero = new System.Windows.Forms.CheckedListBox();
+            this.box = new System.Windows.Forms.CheckedListBox();
             this.SuspendLayout();
             // 
             // button1
@@ -177,13 +177,6 @@
             this.boxContra.Size = new System.Drawing.Size(197, 20);
             this.boxContra.TabIndex = 18;
             // 
-            // boxAmigos
-            // 
-            this.boxAmigos.Location = new System.Drawing.Point(218, 485);
-            this.boxAmigos.Name = "boxAmigos";
-            this.boxAmigos.Size = new System.Drawing.Size(197, 20);
-            this.boxAmigos.TabIndex = 17;
-            // 
             // boxGenero
             // 
             this.boxGenero.FormattingEnabled = true;
@@ -204,16 +197,24 @@
             this.boxGenero.TabIndex = 22;
             this.boxGenero.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
             // 
+            // box
+            // 
+            this.box.FormattingEnabled = true;
+            this.box.Location = new System.Drawing.Point(218, 470);
+            this.box.Name = "box";
+            this.box.Size = new System.Drawing.Size(197, 64);
+            this.box.TabIndex = 23;
+            // 
             // Usuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(477, 576);
+            this.Controls.Add(this.box);
             this.Controls.Add(this.boxGenero);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.boxContra);
-            this.Controls.Add(this.boxAmigos);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.boxEdad);
@@ -251,7 +252,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox boxContra;
-        private System.Windows.Forms.TextBox boxAmigos;
         private System.Windows.Forms.CheckedListBox boxGenero;
+        private System.Windows.Forms.CheckedListBox box;
     }
 }

@@ -54,9 +54,12 @@
             this.trackBar3 = new System.Windows.Forms.TrackBar();
             this.panel2 = new System.Windows.Forms.Panel();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.Biblioteca = new System.Windows.Forms.ListBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lista = new System.Windows.Forms.ListBox();
+            this.mensajes = new System.Windows.Forms.ListBox();
+            this.general = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
@@ -105,6 +108,7 @@
             this.button3.Text = "Ordenar biblioteca por album";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -120,6 +124,7 @@
             this.button4.Text = "Ordenar biblioteca por artista";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -134,6 +139,7 @@
             this.button5.Text = "Mensajes";
             this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -148,6 +154,7 @@
             this.button6.Text = "Lista de amigos";
             this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button7
             // 
@@ -340,7 +347,7 @@
             // 
             // trackBar3
             // 
-            this.trackBar3.Location = new System.Drawing.Point(67, 4);
+            this.trackBar3.Location = new System.Drawing.Point(3, 4);
             this.trackBar3.Maximum = 100;
             this.trackBar3.Minimum = -100;
             this.trackBar3.Name = "trackBar3";
@@ -367,16 +374,16 @@
             this.trackBar1.TabIndex = 21;
             this.trackBar1.TickFrequency = 0;
             // 
-            // listBox1
+            // Biblioteca
             // 
-            this.listBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(280, 101);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(720, 403);
-            this.listBox1.TabIndex = 19;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.Biblioteca.BackColor = System.Drawing.SystemColors.Control;
+            this.Biblioteca.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Biblioteca.FormattingEnabled = true;
+            this.Biblioteca.Location = new System.Drawing.Point(280, 101);
+            this.Biblioteca.Name = "Biblioteca";
+            this.Biblioteca.Size = new System.Drawing.Size(720, 533);
+            this.Biblioteca.TabIndex = 19;
+            this.Biblioteca.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // openFileDialog1
             // 
@@ -390,12 +397,51 @@
             this.timer1.Interval = 1;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
             // 
+            // lista
+            // 
+            this.lista.BackColor = System.Drawing.SystemColors.Control;
+            this.lista.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lista.FormattingEnabled = true;
+            this.lista.Location = new System.Drawing.Point(280, 101);
+            this.lista.Name = "lista";
+            this.lista.Size = new System.Drawing.Size(720, 533);
+            this.lista.TabIndex = 20;
+            this.lista.Visible = false;
+            this.lista.DoubleClick += new System.EventHandler(this.enviar_msj);
+            // 
+            // mensajes
+            // 
+            this.mensajes.BackColor = System.Drawing.SystemColors.Control;
+            this.mensajes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.mensajes.FormattingEnabled = true;
+            this.mensajes.Location = new System.Drawing.Point(280, 101);
+            this.mensajes.Name = "mensajes";
+            this.mensajes.Size = new System.Drawing.Size(720, 533);
+            this.mensajes.TabIndex = 21;
+            this.mensajes.Visible = false;
+            this.mensajes.DoubleClick += new System.EventHandler(this.leer_msj);
+            // 
+            // general
+            // 
+            this.general.BackColor = System.Drawing.SystemColors.Control;
+            this.general.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.general.FormattingEnabled = true;
+            this.general.Location = new System.Drawing.Point(280, 101);
+            this.general.Name = "general";
+            this.general.Size = new System.Drawing.Size(720, 533);
+            this.general.TabIndex = 23;
+            this.general.Visible = false;
+            this.general.SelectedIndexChanged += new System.EventHandler(this.general_SelectedIndexChanged);
+            // 
             // Odyssey
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 700);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.general);
+            this.Controls.Add(this.mensajes);
+            this.Controls.Add(this.lista);
+            this.Controls.Add(this.Biblioteca);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label4);
@@ -458,8 +504,11 @@
         private System.Windows.Forms.TrackBar trackBar3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TrackBar trackBar1;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox Biblioteca;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.ListBox lista;
+        private System.Windows.Forms.ListBox mensajes;
+        private System.Windows.Forms.ListBox general;
     }
 }

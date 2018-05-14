@@ -6,14 +6,16 @@ namespace Cliente
 {
     public partial class Odyssey : Form
     {
+        string name = "";
         static int tipo = 0;
         public static int GetTipo()
         {
             return tipo;
         }
 
-        public Odyssey()
+        public Odyssey(string ob)
         {
+            this.name = ob;
             InitializeComponent();
         }
 
@@ -47,6 +49,9 @@ namespace Cliente
 
         private void button7_Click(object sender, EventArgs e)
         {
+            lista.Hide();
+            mensajes.Hide();
+            general.Show();
             tipo = 1;
             Buscar buscar = new Buscar();
             buscar.Show();
@@ -54,6 +59,9 @@ namespace Cliente
 
         private void button8_Click(object sender, EventArgs e)
         {
+            lista.Hide();
+            mensajes.Hide();
+            general.Show();
             tipo = 2;
             Buscar buscar = new Buscar();
             buscar.Show();
@@ -61,6 +69,9 @@ namespace Cliente
 
         private void button10_Click(object sender, EventArgs e)
         {
+            lista.Hide();
+            mensajes.Hide();
+            general.Show();
             tipo = 3;
             Buscar buscar = new Buscar();
             buscar.Show();
@@ -68,6 +79,9 @@ namespace Cliente
 
         private void button9_Click(object sender, EventArgs e)
         {
+            lista.Hide();
+            mensajes.Hide();
+            general.Show();
             tipo = 4;
             Buscar buscar = new Buscar();
             buscar.Show();
@@ -95,7 +109,7 @@ namespace Cliente
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            axWindowsMediaPlayer1.URL = (string) listBox1.SelectedItem;
+            axWindowsMediaPlayer1.URL = (string) Biblioteca.SelectedItem;
         }
 
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
@@ -104,7 +118,7 @@ namespace Cliente
                 string validacion = "true";
                 if (validacion == "true")
                 {
-                    listBox1.Items.Add(track);
+                    Biblioteca.Items.Add(track);
                     MessageBox.Show("Se ha agregado la nueva cancion");
                 }
                 else if (validacion == "ya")
@@ -120,17 +134,121 @@ namespace Cliente
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            lista.Hide();
+            mensajes.Hide();
         }
 
         private void timer1_Tick_1(object sender, EventArgs e)
         {
-            try
+            //try
+            //{
+            //    trackBar1.Maximum = (int)axWindowsMediaPlayer1.currentMedia.duration;
+            //    trackBar1.Value = (int)axWindowsMediaPlayer1.Ctlcontrols.currentPosition;
+            //}
+            //catch { }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            lista.Items.Clear();
+            mensajes.Hide();
+            string nombre = "hack/david/sebas/";// Sockets.Conectar(9, name, "", "", "", "", "");
+            if (nombre.Length != 0)
             {
-                trackBar1.Maximum = (int)axWindowsMediaPlayer1.currentMedia.duration;
-                trackBar1.Value = (int)axWindowsMediaPlayer1.Ctlcontrols.currentPosition;
+                string[] gen = new string[10];
+                int z = 0;
+                int j = 0;
+                int n = 1;
+                for (int c = 0; nombre.Length > c; c++)
+                {
+                    if (nombre.Substring(c, 1) == "/")
+                    {
+                        gen[z] = nombre.Substring(j, n - 1);
+                        z++;
+                        j = c + 1;
+                        n = 0;
+                    }
+                    n++;
+                }
+                foreach (string usuario in gen)
+                {
+                    if (usuario != null)
+                    {
+                        lista.Items.Add(usuario);
+                    }
+                }
             }
-            catch { }
+            else
+            {
+                lista.Items.Add("No tienes amigos");
+            }
+
+            lista.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            lista.Hide();
+            mensajes.Items.Clear();
+            string nombre = "hola/data/david/data/sebas/data/hack/data/";// Sockets.Conectar(8, "", name, "", "", "", "");
+            int x = 0;
+            int z = 0;
+            int j = 0;
+            if (nombre.Length != 0)
+            {
+                for (int i = 0; nombre.Length > i; i++)
+                {
+                    if (nombre.Substring(i, 1).Equals("/"))
+                    {
+                        if (x == 1)
+                        {
+                            x = 0;
+                            j = 0 - 1;
+                            z = i + 1;
+                        }
+                        else
+                        {
+                            mensajes.Items.Add(nombre.Substring(z, j));
+                            x++;
+                        }
+                    }
+                    j++;
+                }
+            }
+            else
+            {
+                mensajes.Items.Add("No tienes nuevos mensajes");
+            }
+            mensajes.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            lista.Hide();
+            mensajes.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            lista.Hide();
+            mensajes.Hide();
+        }
+
+        private void general_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void enviar_msj(object sender, EventArgs e)
+        {
+            Mensaje mensaje = new Mensaje(name, (string)lista.SelectedItem);
+            mensaje.Show();
+        }
+
+        private void leer_msj(object sender, EventArgs e)
+        {
+            Recomendacion recomendacion = new Recomendacion(name, (string)mensajes.SelectedItem);
+            recomendacion.Show();
         }
     }
 }
