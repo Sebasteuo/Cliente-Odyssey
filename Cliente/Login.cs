@@ -17,7 +17,7 @@ namespace Cliente
             name = boxName.Text;
             string contra = boxContra.Text;
 
-            string validacion = "true";//Sockets.Conectar(2,name,contra,"","","","") ;
+            string validacion = Sockets.Conectar(2,name,contra,"","","","") ;
             if (validacion== "false")
             {
                 MessageBox.Show("El nombre de usuario o la contraseña es incorrrecta");

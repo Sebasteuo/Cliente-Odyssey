@@ -90,7 +90,7 @@ namespace Cliente
 
         private void Usuario_Load(object sender, EventArgs e)
         {
-            string nombre = "";// Sockets.Conectar(0, "", "", "", "", "", "");
+            string nombre = Sockets.Conectar(0, "", "", "", "", "", "");
             string[] gen = new string[10];
             int z = 0;
             int j = 0;
@@ -100,6 +100,7 @@ namespace Cliente
                 if (nombre.Substring(c, 1) == "/")
                 {
                     gen[z] = nombre.Substring(j, n - 1);
+                    Console.WriteLine(gen[z]);
                     z++;
                     j = c + 1;
                     n = 0;

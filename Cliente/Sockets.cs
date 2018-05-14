@@ -9,7 +9,7 @@ namespace Cliente
     {
         public static string Conectar(int work, string String1, string String2, string String3, string String4, string String5, string String6)
         {
-            TcpClient client = new TcpClient("localhost", 113);
+            TcpClient client = new TcpClient("localhost", 8000);
             if (work == 0)
             {
                 string data = work.ToString();
@@ -23,8 +23,8 @@ namespace Cliente
                 xml = xml.Substring(0, xml.IndexOf(char.ConvertFromUtf32(0)));
                 XmlDocument doc = new XmlDocument();
                 doc.LoadXml(xml);
-                string nombre = doc.DocumentElement.Name;
-                return nombre; 
+                string nombre = doc.DocumentElement.InnerText;
+                return nombre;
             }
 
             if (work == 1)
