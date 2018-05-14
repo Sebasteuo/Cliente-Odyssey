@@ -72,6 +72,38 @@ namespace Cliente
             Buscar buscar = new Buscar();
             buscar.Show();
         }
+        //CHUNK,El "HEADER " de cada bloque es sólo el valor de longitud de 32 bits, no necesita proporcionar su propio buffering.
+        //Simplemente se usa así:
+        //foreach (var block in ReadChunks("MyFileName"))
+        //    {
+        // Process block.
+        //     }
+        //
+        Si desea leer un archivo de este tipo, la forma más fácil es, probablemente, encapsular la lectura en un método que devuelve IEnumerable así<byte[]> :</byte[]>
+        public static IEnumerable<byte[]> ReadChunks(string path)
+        {
+            var lengthBytes = new byte[sizeof(int)];
+
+            using (var fs = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read))
+            {
+                int n = fs.Read(lengthBytes, 0, sizeof(int));  // Read block size.
+
+                if (n == 0)      // End of file.
+                    yield break;
+
+                if (n != sizeof(int))
+                    throw new InvalidOperationException("Invalid header");
+
+                int blockLength = BitConverter.ToInt32(lengthBytes, 0);
+                var buffer = new byte[blockLength];
+                n = fs.Read(buffer, 0, blockLength);
+
+                if (n != blockLength)
+                    throw new InvalidOperationException("Missing data");
+
+                yield return buffer;
+            }
+        }
 
         private void trackBar2_Scroll(object sender, EventArgs e)
         {
@@ -98,17 +130,6 @@ namespace Cliente
             axWindowsMediaPlayer1.URL = (string) listBox1.SelectedItem;
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            try
-            {
-                trackBar1.Maximum = (int)axWindowsMediaPlayer1.currentMedia.duration;
-                trackBar1.Value = (int)axWindowsMediaPlayer1.Ctlcontrols.currentPosition;
-            }
-            catch { }
-                
-        }
-
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
             foreach (string track in openFileDialog1.FileNames){
@@ -127,6 +148,21 @@ namespace Cliente
                     MessageBox.Show("El archivo elegido no es mp3");
                 }
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+            try
+            {
+                trackBar1.Maximum = (int)axWindowsMediaPlayer1.currentMedia.duration;
+                trackBar1.Value = (int)axWindowsMediaPlayer1.Ctlcontrols.currentPosition;
+            }
+            catch { }
         }
     }
 }

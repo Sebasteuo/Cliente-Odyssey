@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Odyssey));
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -47,20 +48,21 @@
             this.label4 = new System.Windows.Forms.Label();
             this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button13 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.trackBar2 = new System.Windows.Forms.TrackBar();
+            this.button13 = new System.Windows.Forms.Button();
             this.trackBar3 = new System.Windows.Forms.TrackBar();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -87,6 +89,7 @@
             this.button2.Text = "Ordenar biblioteca por nombre";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -285,10 +288,10 @@
             // axWindowsMediaPlayer1
             // 
             this.axWindowsMediaPlayer1.Enabled = true;
-            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(137, 8);
+            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(132, 17);
             this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
             this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
-            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(75, 23);
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(134, 62);
             this.axWindowsMediaPlayer1.TabIndex = 16;
             this.axWindowsMediaPlayer1.Visible = false;
             // 
@@ -299,30 +302,10 @@
             this.panel1.Controls.Add(this.trackBar2);
             this.panel1.Controls.Add(this.button13);
             this.panel1.Controls.Add(this.trackBar3);
-            this.panel1.Controls.Add(this.axWindowsMediaPlayer1);
             this.panel1.Location = new System.Drawing.Point(280, 46);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(720, 54);
             this.panel1.TabIndex = 17;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Navy;
-            this.panel2.Controls.Add(this.trackBar1);
-            this.panel2.Location = new System.Drawing.Point(280, 12);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(720, 35);
-            this.panel2.TabIndex = 18;
-            // 
-            // button13
-            // 
-            this.button13.Location = new System.Drawing.Point(272, 11);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(75, 23);
-            this.button13.TabIndex = 19;
-            this.button13.Text = "Reproducir";
-            this.button13.UseVisualStyleBackColor = true;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // button14
             // 
@@ -333,14 +316,6 @@
             this.button14.Text = "Pausa";
             this.button14.UseVisualStyleBackColor = true;
             this.button14.Click += new System.EventHandler(this.button14_Click);
-            // 
-            // trackBar1
-            // 
-            this.trackBar1.Location = new System.Drawing.Point(3, 3);
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(714, 45);
-            this.trackBar1.TabIndex = 21;
-            this.trackBar1.TickFrequency = 0;
             // 
             // trackBar2
             // 
@@ -353,6 +328,16 @@
             this.trackBar2.Value = 60;
             this.trackBar2.Scroll += new System.EventHandler(this.trackBar2_Scroll);
             // 
+            // button13
+            // 
+            this.button13.Location = new System.Drawing.Point(272, 11);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(75, 23);
+            this.button13.TabIndex = 19;
+            this.button13.Text = "Reproducir";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
+            // 
             // trackBar3
             // 
             this.trackBar3.Location = new System.Drawing.Point(67, 4);
@@ -364,12 +349,30 @@
             this.trackBar3.TickFrequency = 50;
             this.trackBar3.Scroll += new System.EventHandler(this.trackBar3_Scroll);
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Navy;
+            this.panel2.Controls.Add(this.trackBar1);
+            this.panel2.Controls.Add(this.axWindowsMediaPlayer1);
+            this.panel2.Location = new System.Drawing.Point(280, 12);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(720, 35);
+            this.panel2.TabIndex = 18;
+            // 
+            // trackBar1
+            // 
+            this.trackBar1.Location = new System.Drawing.Point(3, 3);
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(714, 45);
+            this.trackBar1.TabIndex = 21;
+            this.trackBar1.TickFrequency = 0;
+            // 
             // listBox1
             // 
             this.listBox1.BackColor = System.Drawing.SystemColors.Control;
             this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(280, 104);
+            this.listBox1.Location = new System.Drawing.Point(280, 101);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(720, 403);
             this.listBox1.TabIndex = 19;
@@ -380,6 +383,12 @@
             this.openFileDialog1.Multiselect = true;
             this.openFileDialog1.Title = "Abrir";
             this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
             // 
             // Odyssey
             // 
@@ -413,11 +422,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -451,5 +460,6 @@
         private System.Windows.Forms.TrackBar trackBar1;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Timer timer1;
     }
 }

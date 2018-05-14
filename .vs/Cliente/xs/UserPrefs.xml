@@ -1,8 +1,11 @@
 ﻿<Properties StartupConfiguration="{0985B30F-8CBD-423C-880B-89B0AC84A349}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="../../../../Library/Frameworks/Mono.framework/Versions/5.8.1/lib/mono/msbuild/15.0/bin/Microsoft.Common.CurrentVersion.targets">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Cliente/Odyssey.cs">
     <Files>
       <File FileName="Cliente/Login.Designer.cs" Line="57" Column="66" />
       <File FileName="../../../../Library/Frameworks/Mono.framework/Versions/5.8.1/lib/mono/msbuild/15.0/bin/Microsoft.Common.CurrentVersion.targets" Line="2675" Column="5" />
+      <File FileName="Cliente/Odyssey.cs" Line="100" Column="9" />
+      <File FileName="Cliente/Odyssey.resx" Line="1" Column="1" />
+      <File FileName="Cliente/Odyssey.Designer.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
