@@ -93,6 +93,7 @@ namespace Cliente
         // Process block.
         //     }
         //
+        /**
         Si desea leer un archivo de este tipo, la forma más fácil es, probablemente, encapsular la lectura en un método que devuelve IEnumerable así<byte[]> :</byte[]>
         public static IEnumerable<byte[]> ReadChunks(string path)
         {
@@ -117,7 +118,7 @@ namespace Cliente
 
                 yield return buffer;
             }
-        }
+        }**/
 
         private void trackBar2_Scroll(object sender, EventArgs e)
         {
@@ -141,11 +142,8 @@ namespace Cliente
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-<<<<<<< HEAD
             axWindowsMediaPlayer1.URL = (string) listBox1.SelectedItem;
-=======
             axWindowsMediaPlayer1.URL = (string) Biblioteca.SelectedItem;
->>>>>>> ce26871e79a0e822fa38d7c850e0ab12fd67706b
         }
 
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
@@ -170,24 +168,19 @@ namespace Cliente
 
         private void button2_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
 
-=======
             lista.Hide();
             mensajes.Hide();
->>>>>>> ce26871e79a0e822fa38d7c850e0ab12fd67706b
         }
 
         private void timer1_Tick_1(object sender, EventArgs e)
         {
-<<<<<<< HEAD
             try
             {
                 trackBar1.Maximum = (int)axWindowsMediaPlayer1.currentMedia.duration;
                 trackBar1.Value = (int)axWindowsMediaPlayer1.Ctlcontrols.currentPosition;
             }
             catch { }
-=======
             //try
             //{
             //    trackBar1.Maximum = (int)axWindowsMediaPlayer1.currentMedia.duration;
@@ -297,7 +290,6 @@ namespace Cliente
         {
             Recomendacion recomendacion = new Recomendacion(name, (string)mensajes.SelectedItem);
             recomendacion.Show();
->>>>>>> ce26871e79a0e822fa38d7c850e0ab12fd67706b
         }
     }
 }
