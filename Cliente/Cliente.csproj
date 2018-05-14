@@ -57,6 +57,18 @@
     <Compile Include="Buscar.Designer.cs">
       <DependentUpon>Buscar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mensaje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mensaje.Designer.cs">
+      <DependentUpon>Mensaje.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Recomendacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Recomendacion.Designer.cs">
+      <DependentUpon>Recomendacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sockets.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -87,6 +99,9 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mensaje.resx">
+      <DependentUpon>Mensaje.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Odyssey.resx">
       <DependentUpon>Odyssey.cs</DependentUpon>
     </EmbeddedResource>
@@ -99,6 +114,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Recomendacion.resx">
+      <DependentUpon>Recomendacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Usuario.resx">
       <DependentUpon>Usuario.cs</DependentUpon>
     </EmbeddedResource>
