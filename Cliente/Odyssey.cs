@@ -98,17 +98,6 @@ namespace Cliente
             axWindowsMediaPlayer1.URL = (string) listBox1.SelectedItem;
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            try
-            {
-                trackBar1.Maximum = (int)axWindowsMediaPlayer1.currentMedia.duration;
-                trackBar1.Value = (int)axWindowsMediaPlayer1.Ctlcontrols.currentPosition;
-            }
-            catch { }
-                
-        }
-
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
             foreach (string track in openFileDialog1.FileNames){
@@ -127,6 +116,21 @@ namespace Cliente
                     MessageBox.Show("El archivo elegido no es mp3");
                 }
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+            try
+            {
+                trackBar1.Maximum = (int)axWindowsMediaPlayer1.currentMedia.duration;
+                trackBar1.Value = (int)axWindowsMediaPlayer1.Ctlcontrols.currentPosition;
+            }
+            catch { }
         }
     }
 }

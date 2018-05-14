@@ -194,10 +194,10 @@
             "Salsa",
             "Instrumental",
             "Reggae",
-            "Reggetón",
+            "Reggeton",
             "Rap",
             "Hip-Hop",
-            "Clásica"});
+            "Clasica"});
             this.boxGenero.Location = new System.Drawing.Point(218, 306);
             this.boxGenero.Name = "boxGenero";
             this.boxGenero.Size = new System.Drawing.Size(197, 79);
