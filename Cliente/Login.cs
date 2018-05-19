@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace Cliente
@@ -28,6 +29,30 @@ namespace Cliente
             }
         }
 
+        public Odyssey Odyssey
+        {
+            get => default(Odyssey);
+            set
+            {
+            }
+        }
+
+        internal Sockets Sockets1
+        {
+            get => default(Sockets);
+            set
+            {
+            }
+        }
+
+        public Usuario Usuario
+        {
+            get => default(Usuario);
+            set
+            {
+            }
+        }
+
         string name = "";
 
         private void button1_Click(object sender, EventArgs e)
@@ -50,7 +75,8 @@ namespace Cliente
 
         private void Login_Load(object sender, EventArgs e)
         {
-
+            boxContra.PasswordChar = '•';
+            boxContra.CharacterCasing = CharacterCasing.Lower;
         }
 
         private void button3_Click(object sender, EventArgs e)

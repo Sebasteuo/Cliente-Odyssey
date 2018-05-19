@@ -1,5 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Cliente
@@ -33,7 +35,16 @@ namespace Cliente
 
         private void Odyssey_Load(object sender, EventArgs e)
         {
-
+            string ml =Sockets.Conectar(20, name, "1", "", "", "", "");
+            int z = 0;
+            for (int x=0; x<ml.Length;x++)
+            {
+                if (ml.Substring(x, 1).Equals("/"))
+                {
+                    Biblioteca.Items.Add(ml.Substring(z,x-z));
+                    z = x+1;
+                }
+            }
         }
 
         private void button11_Click(object sender, EventArgs e)
@@ -141,17 +152,18 @@ namespace Cliente
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e) // Ver como validar error
         {
-            axWindowsMediaPlayer1.URL = (string)Biblioteca.SelectedItem;
+            axWindowsMediaPlayer1.URL = "C:/Users/mende_000/Downloads/Nueva carpeta/"+Biblioteca.SelectedItem+".mp3";
         }
 
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
+            int t = 0;
             foreach (string track in openFileDialog1.FileNames){
-                string validacion = "true";
+                string validacion = Sockets.Conectar(13, name, track, "", "", "", "");
                 if (validacion == "true")
                 {
-                    Biblioteca.Items.Add(track);
-                    MessageBox.Show("Se ha agregado la nueva cancion");
+                    t++;
+                    Biblioteca.Items.Add((Path.GetFileName(track)).Substring(0, (Path.GetFileName(track)).Length-4));
                 }
                 else if (validacion == "ya")
                 {
@@ -162,12 +174,24 @@ namespace Cliente
                     MessageBox.Show("El archivo elegido no es mp3");
                 }
             }
+            MessageBox.Show("Se han cargado "+ t + " canciones");
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             lista.Hide();
             mensajes.Hide();
+            Biblioteca.Items.Clear();
+            string ml = Sockets.Conectar(20, name, "1", "", "", "", "");
+            int z = 0;
+            for (int x = 0; x < ml.Length; x++)
+            {
+                if (ml.Substring(x, 1).Equals("/"))
+                {
+                    Biblioteca.Items.Add(ml.Substring(z, x - z));
+                    z = x + 1;
+                }
+            }
         }
 
         private void timer1_Tick_1(object sender, EventArgs e)
@@ -265,12 +289,46 @@ namespace Cliente
         {
             lista.Hide();
             mensajes.Hide();
+            Biblioteca.Items.Clear();
+            string ml = Sockets.Conectar(20, name, "2", "", "", "", "");
+            Console.WriteLine(ml);
+            int z = 0;
+            for (int x = 0; x < ml.Length; x++)
+            {
+                if (ml.Substring(x, 1).Equals("/"))
+                {
+                    Biblioteca.Items.Add(" - "+ml.Substring(z, x - z));
+                    z = x + 1;
+                }
+                if (ml.Substring(x, 1).Equals(","))
+                {
+                    Biblioteca.Items.Add(ml.Substring(z, x - z));
+                    z = x + 1;
+                }
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             lista.Hide();
             mensajes.Hide();
+            Biblioteca.Items.Clear();
+            string ml = Sockets.Conectar(20, name, "3", "", "", "", "");
+            Console.WriteLine(ml);
+            int z = 0;
+            for (int x = 0; x < ml.Length; x++)
+            {
+                if (ml.Substring(x, 1).Equals("/"))
+                {
+                    Biblioteca.Items.Add(" - " + ml.Substring(z, x - z));
+                    z = x + 1;
+                }
+                if (ml.Substring(x, 1).Equals(","))
+                {
+                    Biblioteca.Items.Add(ml.Substring(z, x - z));
+                    z = x + 1;
+                }
+            }
         }
 
         private void general_SelectedIndexChanged(object sender, EventArgs e)
@@ -303,6 +361,87 @@ namespace Cliente
             get => default(Sockets);
             set
             {
+            }
+        }
+
+        public Login Login1
+        {
+            get => default(Login);
+            set
+            {
+            }
+        }
+
+        internal Sockets Sockets1
+        {
+            get => default(Sockets);
+            set
+            {
+            }
+        }
+
+        public Amigo Amigo
+        {
+            get => default(Amigo);
+            set
+            {
+            }
+        }
+
+        public Buscar Buscar
+        {
+            get => default(Buscar);
+            set
+            {
+            }
+        }
+
+        public Mensaje Mensaje
+        {
+            get => default(Mensaje);
+            set
+            {
+            }
+        }
+
+        public Recomendacion Recomendacion
+        {
+            get => default(Recomendacion);
+            set
+            {
+            }
+        }
+
+        private void pausa(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Space)) {
+                axWindowsMediaPlayer1.Ctlcontrols.pause();
+            }
+            if (e.KeyChar == Convert.ToChar(Keys.D7))
+            {
+                axWindowsMediaPlayer1.Ctlcontrols.play();
+            }
+        }
+
+        private void volumen(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.J:
+                    if (trackBar2.Value != 0)
+                    {
+                        trackBar2.Value -= 5;
+                        axWindowsMediaPlayer1.settings.volume = trackBar2.Value;
+                    }
+                    break;
+                case Keys.K:
+                    if (trackBar2.Value != 100)
+                    {
+                        trackBar2.Value += 5;
+                        axWindowsMediaPlayer1.settings.volume = trackBar2.Value;
+                    }
+                    break;
+
             }
         }
     }

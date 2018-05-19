@@ -46,6 +46,7 @@
             this.boxContra.Name = "boxContra";
             this.boxContra.Size = new System.Drawing.Size(197, 20);
             this.boxContra.TabIndex = 0;
+            this.boxContra.Text = "p455w0rd";
             // 
             // boxName
             // 
@@ -53,6 +54,7 @@
             this.boxName.Name = "boxName";
             this.boxName.Size = new System.Drawing.Size(197, 20);
             this.boxName.TabIndex = 1;
+            this.boxName.Text = "hack998";
             // 
             // button1
             // 

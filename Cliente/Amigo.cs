@@ -12,6 +12,14 @@ namespace Cliente
             InitializeComponent();
         }
 
+        internal Sockets Sockets
+        {
+            get => default(Sockets);
+            set
+            {
+            }
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();

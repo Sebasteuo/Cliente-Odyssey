@@ -44,6 +44,8 @@
             this.boxContra = new System.Windows.Forms.TextBox();
             this.boxGenero = new System.Windows.Forms.CheckedListBox();
             this.box = new System.Windows.Forms.CheckedListBox();
+            this.boxcontra1 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -51,7 +53,7 @@
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(390, 541);
+            this.button1.Location = new System.Drawing.Point(390, 644);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -64,7 +66,7 @@
             this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(309, 541);
+            this.button2.Location = new System.Drawing.Point(309, 644);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 1;
@@ -155,7 +157,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(46, 488);
+            this.label7.Location = new System.Drawing.Point(46, 574);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(41, 13);
             this.label7.TabIndex = 20;
@@ -200,16 +202,34 @@
             // box
             // 
             this.box.FormattingEnabled = true;
-            this.box.Location = new System.Drawing.Point(218, 470);
+            this.box.Location = new System.Drawing.Point(218, 551);
             this.box.Name = "box";
             this.box.Size = new System.Drawing.Size(197, 64);
             this.box.TabIndex = 23;
+            // 
+            // boxcontra1
+            // 
+            this.boxcontra1.Location = new System.Drawing.Point(218, 490);
+            this.boxcontra1.Name = "boxcontra1";
+            this.boxcontra1.Size = new System.Drawing.Size(197, 20);
+            this.boxcontra1.TabIndex = 24;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(46, 490);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(108, 13);
+            this.label9.TabIndex = 25;
+            this.label9.Text = "Confirmar Contraseña";
             // 
             // Usuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(477, 576);
+            this.ClientSize = new System.Drawing.Size(477, 679);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.boxcontra1);
             this.Controls.Add(this.box);
             this.Controls.Add(this.boxGenero);
             this.Controls.Add(this.label7);
@@ -254,5 +274,7 @@
         private System.Windows.Forms.TextBox boxContra;
         private System.Windows.Forms.CheckedListBox boxGenero;
         private System.Windows.Forms.CheckedListBox box;
+        private System.Windows.Forms.TextBox boxcontra1;
+        private System.Windows.Forms.Label label9;
     }
 }

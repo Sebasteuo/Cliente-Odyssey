@@ -10,6 +10,14 @@ namespace Cliente
             InitializeComponent();
         }
 
+        internal Sockets Sockets
+        {
+            get => default(Sockets);
+            set
+            {
+            }
+        }
+
         private void Buscar_Load(object sender, EventArgs e)
         {
             int tipo = Odyssey.GetTipo();

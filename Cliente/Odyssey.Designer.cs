@@ -46,7 +46,6 @@
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button14 = new System.Windows.Forms.Button();
             this.trackBar2 = new System.Windows.Forms.TrackBar();
@@ -54,18 +53,19 @@
             this.trackBar3 = new System.Windows.Forms.TrackBar();
             this.panel2 = new System.Windows.Forms.Panel();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.Biblioteca = new System.Windows.Forms.ListBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lista = new System.Windows.Forms.ListBox();
             this.mensajes = new System.Windows.Forms.ListBox();
             this.general = new System.Windows.Forms.ListBox();
-            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -292,16 +292,6 @@
             this.label4.Text = "-       Agregar";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // axWindowsMediaPlayer1
-            // 
-            this.axWindowsMediaPlayer1.Enabled = true;
-            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(132, 17);
-            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
-            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
-            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(134, 62);
-            this.axWindowsMediaPlayer1.TabIndex = 16;
-            this.axWindowsMediaPlayer1.Visible = false;
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.RoyalBlue;
@@ -374,16 +364,30 @@
             this.trackBar1.TabIndex = 21;
             this.trackBar1.TickFrequency = 0;
             // 
+            // axWindowsMediaPlayer1
+            // 
+            this.axWindowsMediaPlayer1.Enabled = true;
+            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(132, 17);
+            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
+            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(134, 62);
+            this.axWindowsMediaPlayer1.TabIndex = 16;
+            this.axWindowsMediaPlayer1.Visible = false;
+            // 
             // Biblioteca
             // 
             this.Biblioteca.BackColor = System.Drawing.SystemColors.Control;
             this.Biblioteca.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Biblioteca.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Biblioteca.FormattingEnabled = true;
+            this.Biblioteca.ItemHeight = 18;
             this.Biblioteca.Location = new System.Drawing.Point(280, 101);
             this.Biblioteca.Name = "Biblioteca";
-            this.Biblioteca.Size = new System.Drawing.Size(720, 533);
+            this.Biblioteca.Size = new System.Drawing.Size(720, 522);
             this.Biblioteca.TabIndex = 19;
             this.Biblioteca.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.Biblioteca.KeyDown += new System.Windows.Forms.KeyEventHandler(this.volumen);
+            this.Biblioteca.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.pausa);
             // 
             // openFileDialog1
             // 
@@ -465,7 +469,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Odyssey";
             this.Load += new System.EventHandler(this.Odyssey_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.pausa);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
@@ -473,6 +477,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

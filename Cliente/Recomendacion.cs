@@ -29,6 +29,14 @@ namespace Cliente
             InitializeComponent();
         }
 
+        internal Sockets Sockets
+        {
+            get => default(Sockets);
+            set
+            {
+            }
+        }
+
         private void Recomendacion_Load(object sender, EventArgs e)
         {
             label1.Text = ("Tu amigo " + emisor + ", te ha recomendado esta cancion: " + data);

@@ -14,6 +14,14 @@ namespace Cliente
             InitializeComponent();
         }
 
+        internal Sockets Sockets
+        {
+            get => default(Sockets);
+            set
+            {
+            }
+        }
+
         private void Mensaje_Load(object sender, EventArgs e)
         {
             label1.Text = "Para " + remitente + " :";
