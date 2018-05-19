@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using System.Windows.Forms;
 
 namespace Cliente
@@ -10,6 +11,23 @@ namespace Cliente
         {
             InitializeComponent();
         }
+
+        internal Sockets Sockets
+        {
+            get => default(Sockets);
+            set
+            {
+            }
+        }
+
+        internal Properties.Settings Settings
+        {
+            get => default(Properties.Settings);
+            set
+            {
+            }
+        }
+
         string name = "";
 
         private void button1_Click(object sender, EventArgs e)
@@ -17,7 +35,7 @@ namespace Cliente
             name = boxName.Text;
             string contra = boxContra.Text;
 
-            string validacion = Sockets.Conectar(2,name,contra,"","","","") ;
+            string validacion = Sockets.Conectar(12,name,contra,"","","","") ;
             if (validacion== "false")
             {
                 MessageBox.Show("El nombre de usuario o la contraseña es incorrrecta");
@@ -45,6 +63,11 @@ namespace Cliente
             Usuario usuario = new Usuario();
             usuario.Show();
             this.Close();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

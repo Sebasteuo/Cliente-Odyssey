@@ -14,16 +14,24 @@ namespace Cliente
     {
         string name = "";
         string emisor = "";
+        string data = "";
         public Recomendacion(string name, string emisor)
         {
+            for (int i=0; i < emisor.Length; i++)
+            {
+                if (emisor.Substring(i,1)=="-")
+                {
+                    this.emisor = emisor.Substring(0,i-1);
+                    this.data = emisor.Substring(i+1);
+                }
+            }
             this.name = name;
-            this.emisor = emisor;
             InitializeComponent();
         }
 
         private void Recomendacion_Load(object sender, EventArgs e)
         {
-            label1.Text = ("Tu amigo " + emisor + ", te ha recomendado esta cancion: " + "A Real Life");
+            label1.Text = ("Tu amigo " + emisor + ", te ha recomendado esta cancion: " + data);
             if (label1.Width > 320)
             {
                 button2.SetBounds(button2.Left + ((label1.Width - this.Width)/2), 89, 75, 23);

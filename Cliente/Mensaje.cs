@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Cliente
@@ -33,7 +26,7 @@ namespace Cliente
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string boolean=Sockets.Conectar(7,emisor,remitente,textBox1.Text,"","","");
+            string boolean=Sockets.Conectar(17,emisor,remitente,textBox1.Text,"","","");
             if (boolean.Equals("true"))
             {
                 MessageBox.Show("Se ha enviado tu mensaje");

@@ -5,8 +5,10 @@ namespace Cliente
 {
     public partial class Amigo : Form
     {
-        public Amigo()
+        string name = "";
+        public Amigo(string name)
         {
+            this.name = name;
             InitializeComponent();
         }
 
@@ -20,11 +22,11 @@ namespace Cliente
             if (boxNameAmigo.Text.Length != 0)
             {
                 string amigo = boxNameAmigo.Text;
-                string validacion = "true";
-                if(validacion == "true"){
+                string validacion = Sockets.Conectar(23,name,amigo,"","","","");
+                if(validacion.Equals("true")){
                     MessageBox.Show("Se ha agregado el usuario");
                 }
-                else if(validacion == "ya")
+                else if(validacion.Equals("ya"))
                 {
                     MessageBox.Show("Ya tienes este usuario con amigo");
                 }

@@ -38,7 +38,7 @@ namespace Cliente
 
         private void button11_Click(object sender, EventArgs e)
         {
-            Amigo amigo = new Amigo();
+            Amigo amigo = new Amigo(name);
             amigo.Show();
         }
 
@@ -139,9 +139,9 @@ namespace Cliente
             axWindowsMediaPlayer1.Ctlcontrols.pause();
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e) // Ver como validar error
         {
-            axWindowsMediaPlayer1.URL = (string) Biblioteca.SelectedItem;
+            axWindowsMediaPlayer1.URL = (string)Biblioteca.SelectedItem;
         }
 
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
@@ -184,7 +184,7 @@ namespace Cliente
         {
             lista.Items.Clear();
             mensajes.Hide();
-            string nombre = Sockets.Conectar(9, name, "", "", "", "", "");
+            string nombre = Sockets.Conectar(19, name, "", "", "", "", "");
             if (nombre.Length != 0)
             {
                 string[] gen = new string[10];
@@ -222,10 +222,13 @@ namespace Cliente
         {
             lista.Hide();
             mensajes.Items.Clear();
-            string nombre = "hola/data/david/data/sebas/data/hack/data/";// Sockets.Conectar(8, "", name, "", "", "", "");
-            int x = 0;
+            string nombre = Sockets.Conectar(18, name, "", "", "", "", "");
+            int x = 1;
             int z = 0;
+            int k = 0;
             int j = 0;
+            int t = 0;
+            int y = 1;
             if (nombre.Length != 0)
             {
                 for (int i = 0; nombre.Length > i; i++)
@@ -235,15 +238,19 @@ namespace Cliente
                         if (x == 1)
                         {
                             x = 0;
+                            t = y-1;
                             j = 0 - 1;
                             z = i + 1;
                         }
                         else
                         {
-                            mensajes.Items.Add(nombre.Substring(z, j));
+                            mensajes.Items.Add(nombre.Substring(k, t) +" - "+ nombre.Substring(z, j));
+                            k = i + 1;
+                            y = 0;
                             x++;
                         }
                     }
+                    y++;
                     j++;
                 }
             }
@@ -281,6 +288,22 @@ namespace Cliente
         {
             Recomendacion recomendacion = new Recomendacion(name, (string)mensajes.SelectedItem);
             recomendacion.Show();
+        }
+
+        public Login Login
+        {
+            get => default(Login);
+            set
+            {
+            }
+        }
+
+        internal Sockets Sockets
+        {
+            get => default(Sockets);
+            set
+            {
+            }
         }
     }
 }

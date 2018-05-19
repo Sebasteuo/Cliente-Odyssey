@@ -10,6 +10,22 @@ namespace Cliente
             InitializeComponent();
         }
 
+        public Login Login
+        {
+            get => default(Login);
+            set
+            {
+            }
+        }
+
+        internal Sockets Sockets
+        {
+            get => default(Sockets);
+            set
+            {
+            }
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             Login login = new Login();
@@ -44,7 +60,7 @@ namespace Cliente
                                 {
                                     amigos = amigos + s + ",";
                                 }
-                                string resultado = Sockets.Conectar(1, nick, name, edad, genero, contra, amigos);
+                                string resultado = Sockets.Conectar(10, nick, name, edad, genero, contra, amigos);
 
                                 if (resultado == "true")
                                 {
@@ -90,7 +106,7 @@ namespace Cliente
 
         private void Usuario_Load(object sender, EventArgs e)
         {
-            string nombre = Sockets.Conectar(0, "", "", "", "", "", "");
+            string nombre = Sockets.Conectar(00, "", "", "", "", "", "");
             string[] gen = new string[10];
             int z = 0;
             int j = 0;
