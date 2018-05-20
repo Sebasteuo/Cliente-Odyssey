@@ -33,7 +33,7 @@ namespace Cliente
         /// <returns></returns>
         public static string Conectar(int work, string String1, string String2, string String3, string String4, string String5, string String6)
         {
-            TcpClient client = new TcpClient("localhost",5000);//"192.168.100.13"
+            TcpClient client = new TcpClient("localhost",3000);//"192.168.100.13"
             if (work == 0)
             {
                 string data = work.ToString()+"0";
@@ -94,12 +94,12 @@ namespace Cliente
             }
             if (work == 13)
             {
-                string data = "33"+ String1+"/" + Path.GetFileName(String2) +"/"+ Convert.ToBase64String(File.ReadAllBytes(String2));
+                string data = "13"+ String1+"/" + Path.GetFileName(String2) +"/"+ Convert.ToBase64String(File.ReadAllBytes(String2));
                 byte[] buf = Encoding.UTF8.GetBytes(data + "/n");
                 NetworkStream stream = client.GetStream();
                 hola hola = new hola(stream, buf, data);
                 Thread t = new Thread(new ThreadStart(hola.Sad));
-                t.Start();
+                t.Start();t.Join();
                 while (t.IsAlive) { }
                 client.Close();
                 return "true";
@@ -194,7 +194,35 @@ namespace Cliente
                 doc.LoadXml(xml);
                 return doc.DocumentElement.Name;
             }
+            if (work == 33)
+            {
+                string data = work.ToString() + "/" + String1 + "/" + String2;
+                byte[] buf;
+                buf = Encoding.UTF8.GetBytes(data + "\n");
+                NetworkStream stream = client.GetStream();
+                stream.Write(buf, 0, data.Length + 1);
+                buf = new byte[100000000];
+                stream.Read(buf, 0, 100000000);
+                string xml = Encoding.UTF8.GetString(buf);
+                Console.WriteLine(buf[1]);
+                Console.WriteLine(buf[0]);
+                Console.WriteLine(xml);
+                //Console.WriteLine(Base64Decode(xml));
+            }
             return "false";
         }
+        public static string Base64Decode(string cadena)
+        {
+            var encoder = new System.Text.UTF8Encoding();
+            var utf8Decode = encoder.GetDecoder();
+
+            byte[] cadenaByte = Convert.FromBase64String(cadena);
+            int charCount = utf8Decode.GetCharCount(cadenaByte, 0, cadenaByte.Length);
+            char[] decodedChar = new char[charCount];
+            utf8Decode.GetChars(cadenaByte, 0, cadenaByte.Length, decodedChar, 0);
+            string result = new String(decodedChar);
+            return result;
+        }
+
     }
 }

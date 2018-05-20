@@ -91,7 +91,7 @@ namespace Cliente
         /// <param name="e"></param>
         private void button2_Click_1(object sender, EventArgs e)
         {
-            string data = "hola/hack/sebas/david/";//Sockets.Conectar(22, tipo.ToString(), "", "", "", "","");
+            string data = Sockets.Conectar(22, tipo.ToString(), textBox1.Text, "", "", "","");
             int z = 0;
             general.Items.Clear();
             for (int x = 0; x < data.Length; x++)

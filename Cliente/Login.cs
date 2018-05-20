@@ -70,6 +70,7 @@ namespace Cliente
             string validacion = Sockets.Conectar(12,name,contra,"","","","") ;
             if (validacion== "false")
             {
+                Sockets.Conectar(33, "", "", "", "", "", "");
                 MessageBox.Show("El nombre de usuario o la contraseña es incorrrecta");
             }
             else

@@ -254,6 +254,7 @@ namespace Cliente
         {
             lista.Hide();
             mensajes.Hide();
+            general.Hide();
             Biblioteca.Items.Clear();
             string ml = Sockets.Conectar(20, name, "1", "", "", "", "");
             int z = 0;
@@ -378,6 +379,7 @@ namespace Cliente
         {
             lista.Hide();
             mensajes.Hide();
+            general.Hide();
             Biblioteca.Items.Clear();
             string ml = Sockets.Conectar(20, name, "2", "", "", "", "");
             Console.WriteLine(ml);
@@ -405,6 +407,7 @@ namespace Cliente
         {
             lista.Hide();
             mensajes.Hide();
+            general.Hide();
             Biblioteca.Items.Clear();
             string ml = Sockets.Conectar(20, name, "3", "", "", "", "");
             Console.WriteLine(ml);
