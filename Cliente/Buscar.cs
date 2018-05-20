@@ -2,11 +2,21 @@
 using System.Windows.Forms;
 
 namespace Cliente
-{
+{   
+    /// <summary>
+    /// Logica del form buscar
+    /// </summary>
     public partial class Buscar : Form
     {
-        public Buscar()
+        ListBox general;
+        int tipo = Odyssey.GetTipo();
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="general"> listbox del odyssey</param>
+        public Buscar(ListBox general)
         {
+            this.general = general;
             InitializeComponent();
         }
 
@@ -17,7 +27,11 @@ namespace Cliente
             {
             }
         }
-
+        /// <summary>
+        /// Modifica la interfase del Form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Buscar_Load(object sender, EventArgs e)
         {
             int tipo = Odyssey.GetTipo();
@@ -56,7 +70,11 @@ namespace Cliente
         {
             
         }
-
+        /// <summary>
+        /// Cierra el Form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -65,6 +83,26 @@ namespace Cliente
         private void label1_Click_1(object sender, EventArgs e)
         {
 
+        }
+        /// <summary>
+        /// Actualiza el listbox de Odyssey con la informacion recivida del Odyssey
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            string data = "hola/hack/sebas/david/";//Sockets.Conectar(22, tipo.ToString(), "", "", "", "","");
+            int z = 0;
+            general.Items.Clear();
+            for (int x = 0; x < data.Length; x++)
+            {
+                if (data.Substring(x, 1).Equals("/"))
+                {
+                    general.Items.Add(data.Substring(z, x - z));
+                    z = x + 1;
+                }
+            }
+            this.Close();
         }
     }
 }

@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Odyssey));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -56,16 +57,26 @@
             this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.Biblioteca = new System.Windows.Forms.ListBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.reloj = new System.Windows.Forms.Timer(this.components);
             this.lista = new System.Windows.Forms.ListBox();
             this.mensajes = new System.Windows.Forms.ListBox();
             this.general = new System.Windows.Forms.ListBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.progressBar2 = new System.Windows.Forms.ProgressBar();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
+            this.spectrum1 = new Cliente.Spectrum();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -299,7 +310,7 @@
             this.panel1.Controls.Add(this.trackBar2);
             this.panel1.Controls.Add(this.button13);
             this.panel1.Controls.Add(this.trackBar3);
-            this.panel1.Location = new System.Drawing.Point(280, 46);
+            this.panel1.Location = new System.Drawing.Point(280, 386);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(720, 54);
             this.panel1.TabIndex = 17;
@@ -351,7 +362,7 @@
             this.panel2.BackColor = System.Drawing.Color.Navy;
             this.panel2.Controls.Add(this.trackBar1);
             this.panel2.Controls.Add(this.axWindowsMediaPlayer1);
-            this.panel2.Location = new System.Drawing.Point(280, 12);
+            this.panel2.Location = new System.Drawing.Point(280, 352);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(720, 35);
             this.panel2.TabIndex = 18;
@@ -381,9 +392,9 @@
             this.Biblioteca.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Biblioteca.FormattingEnabled = true;
             this.Biblioteca.ItemHeight = 18;
-            this.Biblioteca.Location = new System.Drawing.Point(280, 101);
+            this.Biblioteca.Location = new System.Drawing.Point(280, 443);
             this.Biblioteca.Name = "Biblioteca";
-            this.Biblioteca.Size = new System.Drawing.Size(720, 522);
+            this.Biblioteca.Size = new System.Drawing.Size(720, 180);
             this.Biblioteca.TabIndex = 19;
             this.Biblioteca.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             this.Biblioteca.KeyDown += new System.Windows.Forms.KeyEventHandler(this.volumen);
@@ -395,20 +406,20 @@
             this.openFileDialog1.Title = "Abrir";
             this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
-            // timer1
+            // reloj
             // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 1;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
+            this.reloj.Enabled = true;
+            this.reloj.Interval = 1;
+            this.reloj.Tick += new System.EventHandler(this.timer1_Tick_1);
             // 
             // lista
             // 
             this.lista.BackColor = System.Drawing.SystemColors.Control;
             this.lista.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lista.FormattingEnabled = true;
-            this.lista.Location = new System.Drawing.Point(280, 101);
+            this.lista.Location = new System.Drawing.Point(280, 439);
             this.lista.Name = "lista";
-            this.lista.Size = new System.Drawing.Size(720, 533);
+            this.lista.Size = new System.Drawing.Size(720, 195);
             this.lista.TabIndex = 20;
             this.lista.Visible = false;
             this.lista.DoubleClick += new System.EventHandler(this.enviar_msj);
@@ -418,9 +429,9 @@
             this.mensajes.BackColor = System.Drawing.SystemColors.Control;
             this.mensajes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mensajes.FormattingEnabled = true;
-            this.mensajes.Location = new System.Drawing.Point(280, 101);
+            this.mensajes.Location = new System.Drawing.Point(280, 439);
             this.mensajes.Name = "mensajes";
-            this.mensajes.Size = new System.Drawing.Size(720, 533);
+            this.mensajes.Size = new System.Drawing.Size(720, 195);
             this.mensajes.TabIndex = 21;
             this.mensajes.Visible = false;
             this.mensajes.DoubleClick += new System.EventHandler(this.leer_msj);
@@ -430,18 +441,84 @@
             this.general.BackColor = System.Drawing.SystemColors.Control;
             this.general.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.general.FormattingEnabled = true;
-            this.general.Location = new System.Drawing.Point(280, 101);
+            this.general.Location = new System.Drawing.Point(280, 439);
             this.general.Name = "general";
-            this.general.Size = new System.Drawing.Size(720, 533);
+            this.general.Size = new System.Drawing.Size(720, 195);
             this.general.TabIndex = 23;
             this.general.Visible = false;
             this.general.SelectedIndexChanged += new System.EventHandler(this.general_SelectedIndexChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(581, 183);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(13, 13);
+            this.label5.TabIndex = 24;
+            this.label5.Text = "L";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(761, 183);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(15, 13);
+            this.label6.TabIndex = 25;
+            this.label6.Text = "R";
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(600, 183);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(159, 13);
+            this.progressBar1.TabIndex = 26;
+            // 
+            // progressBar2
+            // 
+            this.progressBar2.Location = new System.Drawing.Point(782, 183);
+            this.progressBar2.Name = "progressBar2";
+            this.progressBar2.Size = new System.Drawing.Size(159, 13);
+            this.progressBar2.TabIndex = 27;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(331, 180);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(244, 21);
+            this.comboBox1.TabIndex = 28;
+            // 
+            // chart1
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            this.chart1.Location = new System.Drawing.Point(283, 207);
+            this.chart1.Name = "chart1";
+            this.chart1.Size = new System.Drawing.Size(705, 139);
+            this.chart1.TabIndex = 29;
+            this.chart1.Text = "chart1";
+            // 
+            // elementHost1
+            // 
+            this.elementHost1.Location = new System.Drawing.Point(284, 12);
+            this.elementHost1.Name = "elementHost1";
+            this.elementHost1.Size = new System.Drawing.Size(704, 162);
+            this.elementHost1.TabIndex = 30;
+            this.elementHost1.Text = "elementHost1";
+            this.elementHost1.Child = this.spectrum1;
             // 
             // Odyssey
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 700);
+            this.Controls.Add(this.elementHost1);
+            this.Controls.Add(this.chart1);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.progressBar2);
+            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.general);
             this.Controls.Add(this.mensajes);
             this.Controls.Add(this.lista);
@@ -478,6 +555,7 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -511,9 +589,18 @@
         private System.Windows.Forms.TrackBar trackBar1;
         private System.Windows.Forms.ListBox Biblioteca;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer reloj;
         private System.Windows.Forms.ListBox lista;
         private System.Windows.Forms.ListBox mensajes;
         private System.Windows.Forms.ListBox general;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.ProgressBar progressBar2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Integration.ElementHost elementHost1;
+        private Spectrum spectrum1;
     }
 }

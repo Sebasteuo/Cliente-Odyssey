@@ -3,10 +3,13 @@ C:\Users\mende_000\Desktop\Cliente\Cliente\Cliente\bin\Debug\Cliente.exe
 C:\Users\mende_000\Desktop\Cliente\Cliente\Cliente\bin\Debug\Cliente.pdb
 C:\Users\mende_000\Desktop\Cliente\Cliente\Cliente\bin\Debug\Interop.WMPLib.dll
 C:\Users\mende_000\Desktop\Cliente\Cliente\Cliente\bin\Debug\AxInterop.WMPLib.dll
-C:\Users\mende_000\Desktop\Cliente\Cliente\Cliente\obj\Debug\Cliente.csprojResolveAssemblyReference.cache
 C:\Users\mende_000\Desktop\Cliente\Cliente\Cliente\obj\Debug\Interop.WMPLib.dll
 C:\Users\mende_000\Desktop\Cliente\Cliente\Cliente\obj\Debug\AxInterop.WMPLib.dll
 C:\Users\mende_000\Desktop\Cliente\Cliente\Cliente\obj\Debug\Cliente.csproj.ResolveComReference.cache
+C:\Users\mende_000\Desktop\Cliente\Cliente\Cliente\obj\Debug\Spectrum.baml
+C:\Users\mende_000\Desktop\Cliente\Cliente\Cliente\obj\Debug\Spectrum.g.cs
+C:\Users\mende_000\Desktop\Cliente\Cliente\Cliente\obj\Debug\Cliente_MarkupCompile.cache
+C:\Users\mende_000\Desktop\Cliente\Cliente\Cliente\obj\Debug\Cliente.g.resources
 C:\Users\mende_000\Desktop\Cliente\Cliente\Cliente\obj\Debug\Cliente.Amigo.resources
 C:\Users\mende_000\Desktop\Cliente\Cliente\Cliente\obj\Debug\Cliente.Buscar.resources
 C:\Users\mende_000\Desktop\Cliente\Cliente\Cliente\obj\Debug\Cliente.Login.resources
@@ -19,3 +22,4 @@ C:\Users\mende_000\Desktop\Cliente\Cliente\Cliente\obj\Debug\Cliente.csproj.Gene
 C:\Users\mende_000\Desktop\Cliente\Cliente\Cliente\obj\Debug\Cliente.csproj.CoreCompileInputs.cache
 C:\Users\mende_000\Desktop\Cliente\Cliente\Cliente\obj\Debug\Cliente.exe
 C:\Users\mende_000\Desktop\Cliente\Cliente\Cliente\obj\Debug\Cliente.pdb
+C:\Users\mende_000\Desktop\Cliente\Cliente\Cliente\obj\Debug\Cliente.csprojResolveAssemblyReference.cache

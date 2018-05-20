@@ -8,6 +8,9 @@ using System.Xml;
 
 namespace Cliente
 {
+    /// <summary>
+    /// Logica de la coneccion cliente-servidor
+    /// </summary>
     class Sockets
     {
         internal Properties.Settings Settings
@@ -17,13 +20,17 @@ namespace Cliente
             {
             }
         }
-
-        public static object data { get; private set; }
-
-        static void metodo()
-        {
-            Console.WriteLine("hola");
-        }
+        /// <summary>
+        /// Inicia la coneccion
+        /// </summary>
+        /// <param name="work"> intiger que dice que hacer con la informacion </param>
+        /// <param name="String1"> informacion </param>
+        /// <param name="String2"> informacion </param>
+        /// <param name="String3"> informacion </param>
+        /// <param name="String4"> informacion </param>
+        /// <param name="String5"> informacion </param>
+        /// <param name="String6"> informacion </param>
+        /// <returns></returns>
         public static string Conectar(int work, string String1, string String2, string String3, string String4, string String5, string String6)
         {
             TcpClient client = new TcpClient("localhost",5000);//"192.168.100.13"
@@ -36,7 +43,9 @@ namespace Cliente
                 stream.Write(buf, 0, data.Length + 1);
                 buf = new byte[100];
                 stream.Read(buf, 0, 100);
+                // obtengo la informacion del servidor en UTF8
                 string xml = Encoding.UTF8.GetString(buf);
+                // xml va a tener la logica de un documento xml
                 xml = xml.Substring(0, xml.IndexOf(char.ConvertFromUtf32(0)));
                 XmlDocument doc = new XmlDocument();
                 doc.LoadXml(xml);
@@ -46,7 +55,6 @@ namespace Cliente
 
             if (work == 10)
             {
-
                 string data = work.ToString() + "/" + String1 + "/" + String2 + "/" + String3 + "/" + String4 + "/" + String5 + "/" + String6;
                 byte[] buf;
                 buf = Encoding.UTF8.GetBytes(data + "\n");
@@ -150,6 +158,21 @@ namespace Cliente
                 stream.Write(buf, 0, data.Length + 1);
                 buf = new byte[100000];
                 stream.Read(buf, 0, 100000);
+                string xml = Encoding.UTF8.GetString(buf);
+                xml = xml.Substring(0, xml.IndexOf(char.ConvertFromUtf32(0)));
+                XmlDocument doc = new XmlDocument();
+                doc.LoadXml(xml);
+                return doc.DocumentElement.InnerText;
+            }
+            if(work == 22)
+            {
+                string data = work.ToString() + String1 + "/" + String2;
+                byte[] buf;
+                buf = Encoding.UTF8.GetBytes(data + "\n");
+                NetworkStream stream = client.GetStream();
+                stream.Write(buf, 0, data.Length + 1);
+                buf = new byte[10000];
+                stream.Read(buf, 0, 10000);
                 string xml = Encoding.UTF8.GetString(buf);
                 xml = xml.Substring(0, xml.IndexOf(char.ConvertFromUtf32(0)));
                 XmlDocument doc = new XmlDocument();

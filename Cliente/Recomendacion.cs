@@ -10,11 +10,19 @@ using System.Windows.Forms;
 
 namespace Cliente
 {
+    /// <summary>
+    /// Logica del form Recomendacion
+    /// </summary>
     public partial class Recomendacion : Form
     {
         string name = "";
         string emisor = "";
         string data = "";
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="name"> nombre del usuario que recibe el mensaje </param>
+        /// <param name="emisor"> nombre del ususario que envia el mensaje </param>
         public Recomendacion(string name, string emisor)
         {
             for (int i=0; i < emisor.Length; i++)
@@ -36,7 +44,11 @@ namespace Cliente
             {
             }
         }
-
+        /// <summary>
+        /// Modifica el texto del Form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Recomendacion_Load(object sender, EventArgs e)
         {
             label1.Text = ("Tu amigo " + emisor + ", te ha recomendado esta cancion: " + data);

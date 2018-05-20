@@ -1,13 +1,16 @@
 ﻿using System;
-using System.Text;
-using System.Threading;
 using System.Windows.Forms;
 
 namespace Cliente
 {
+    /// <summary>
+    /// Logica del form login
+    /// </summary>
     public partial class Login : Form
     {
-        
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public Login()
         {
             InitializeComponent();
@@ -54,7 +57,11 @@ namespace Cliente
         }
 
         string name = "";
-
+        /// <summary>
+        /// Valida el inicio de sesion
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             name = boxName.Text;
@@ -72,18 +79,30 @@ namespace Cliente
                 this.Close();
             }
         }
-
+        /// <summary>
+        /// Codifica el campo de texto de la contraseña
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Login_Load(object sender, EventArgs e)
         {
             boxContra.PasswordChar = '•';
             boxContra.CharacterCasing = CharacterCasing.Lower;
         }
-
+        /// <summary>
+        /// Cierra el Form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button3_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
+        /// <summary>
+        /// Envia al form de creacion de usuario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             Usuario usuario = new Usuario();

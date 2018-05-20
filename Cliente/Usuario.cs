@@ -3,6 +3,9 @@ using System.Windows.Forms;
 
 namespace Cliente
 {
+    /// <summary>
+    /// Logica del Form Usuario
+    /// </summary>
     public partial class Usuario : Form
     {
         public Usuario()
@@ -41,14 +44,23 @@ namespace Cliente
             {
             }
         }
-
+        /// <summary>
+        /// Cierra el form y abre el Form login
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             Login login = new Login();
             login.Show();
             this.Close();
         }
-
+        /// <summary>
+        /// Valida el contenido de los campos de texto y en el caso 
+        /// de que todo este bien intenta crear el nuevo usuario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             if (boxNick.TextLength > 0)
@@ -125,7 +137,12 @@ namespace Cliente
         {
 
         }
-
+        /// <summary>
+        /// Codifica los campos de texto de las contrasenas
+        /// Actualiza el Listbox de los posibles amigos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Usuario_Load(object sender, EventArgs e)
         {
             boxcontra1.PasswordChar = '•';
@@ -142,7 +159,6 @@ namespace Cliente
                 if (nombre.Substring(c, 1) == "/")
                 {
                     gen[z] = nombre.Substring(j, n - 1);
-                    Console.WriteLine(gen[z]);
                     z++;
                     j = c + 1;
                     n = 0;
